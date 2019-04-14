@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Angular7AppTemplate
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.2.
@@ -25,3 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+=======
+# angula7demo
+Angular 7 project that covers basic Angular concepts such as Components, Services, View Child etc.
+>>>>>>> 4ba222c50c78d9c2aa4c268f64adc1d8806c04d0
