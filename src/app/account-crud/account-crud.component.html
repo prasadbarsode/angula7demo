@@ -1,0 +1,116 @@
+<div class="container">
+
+
+
+    <input type="button" value="ADD NEW ACCOUNT"   class="btn btn-primary" (click)="newAccount()">
+    
+
+
+
+  <div class="row col-md-6"  *ngIf="account">
+   <table class="table table-hover table-striped table-responsive">
+ 
+     <tbody>
+
+      <tr>
+          <th>ACCNO</th>
+          <td>  <input [(ngModel)]="account.accno"></td>
+          </tr>
+          <tr>
+          <th>NAME</th>
+          <td>  <input [(ngModel)]="account.name"></td>
+          </tr>
+          <tr>
+          <th>BALANCE</th>
+          <td>  <input [(ngModel)]="account.balance"></td>
+        </tr>
+        <tr>
+       
+          <th>EMAIL</th>
+          <td>  <input [(ngModel)]="account.email"></td>
+        </tr>
+        <tr>
+       
+          <th>MOBILE</th>
+          <td>  <input [(ngModel)]="account.mobile"></td>
+        </tr>
+        <tr>
+          <th>PAN</th>
+          <td>  <input [(ngModel)]="account.pan"></td>
+        </tr>
+
+        <tr>
+          <th>DOC</th>
+          <td>  <input [(ngModel)]="account.doc"></td>
+        </tr>
+        <tr>
+         
+          <td colspan="2" [hidden]="add" ><input type="button"    value="ADD"   class="btn btn-success" (click)="addAccount()"></td>
+     
+      </tr>
+
+      <tr>
+         
+          <td colspan="2" [hidden]="save"><input type="button" value="SAVE" class="btn btn-primary" (click)="updateAccountByAccno(account.accno)"></td>
+     
+      </tr>
+
+
+     </tbody>
+
+
+   </table>
+
+
+  </div>
+
+
+
+  <div class="row">
+    <table class="table table-hover table-striped table-responsive">
+  
+      <thead>
+       <tr>
+           <th>ACCNO</th>
+           <th>NAME</th>
+           <th>BALANCE</th>
+           <th>EMAIL</th>
+           <th>MOBILE</th>
+           <th>PAN</th>
+           <th>DOC</th>
+           <th>EDIT</th>
+           <th>DELETE</th>
+ 
+   </tr>
+      </thead>
+      <tbody>
+ 
+       <tr *ngFor="let a of accounts">
+           <td>{{a.accno}}</td>
+           <td>{{a.name}}</td>
+           <td>{{a.balance}}</td>
+           <td>{{a.email}}</td>
+           <td>{{a.mobile}}</td>
+           <td>{{a.pan}}</td>
+           <td>{{a.doc}}</td>
+           
+   
+     <td><input type="button" value="EDIT" class="btn btn-info" (click)="getAccountByAccno(a.accno)"></td>
+           <td><input type="button" value="DELETE" class="btn btn-danger" (click)="deleteAccountByAccno(a.accno)"></td>
+      
+       </tr>
+ 
+ 
+ 
+      </tbody>
+ 
+ 
+    </table>
+ 
+ 
+ 
+   </div>
+ 
+ 
+
+</div>

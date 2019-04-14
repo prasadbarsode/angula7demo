@@ -1,0 +1,31 @@
+<div>
+<h2>Custom Directves </h2>
+
+
+Select Fcolor :<input type="color" [(ngModel)]="fcolor"/> <br/><br/>
+
+Select Bcolor :<input type="color" [(ngModel)]="bcolor"/> <br/><br/>
+
+
+<input type="checkbox" [(ngModel)]="show"/>  Show/Hide Div1
+
+<input type="checkbox" [(ngModel)]="hide"/>  Show/Hide Div2
+
+
+<div [bgColor]="bcolor"   *ngShow="show">
+
+  <h1>Practice makes man perfect</h1>
+
+
+</div>
+
+
+<div>
+<h1>Welcome To Custom Directvies</h1>
+  
+
+</div>
+
+
+
+</div>

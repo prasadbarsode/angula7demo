@@ -1,0 +1,51 @@
+<div class="container">
+
+
+  <div  [bgColor]="'cyan'">
+      <h3>@ViewChild using Component</h3>
+      Number Example:
+      <button type="button" (click)="increase()">Increase</button>
+      <button type="button" (click)="decrease()">Decrease</button>
+      <br/><br/>
+      <app-number></app-number> 
+
+  </div>
+
+
+
+  <div [bgColor]="'yellow'">
+
+      <h3>@ViewChild using Component</h3>
+      Stopwatch Example: 
+      <button type="button" (click)="startStopwatch()">Start</button>
+      <button type="button" (click)="stopStopwatch()">Stop</button>
+      <br/>
+      <app-stopwatch></app-stopwatch> 
+
+
+  </div>
+
+
+  <div [bgColor]="'gray'">
+   
+      <button type="button" (click)="changeBgColor()">Change BgColor</button>
+   
+  
+  </div>
+
+
+  <div  [bgColor]="'orange'">
+      <h3>@ViewChild with Template Variable using ElementRef to access Native Element </h3>
+      <div>
+         Name: <input type="text" #name> <br/>
+         City: <input type="text" #city>  
+      </div> 
+
+
+  </div>
+
+
+
+</div>
+
+    

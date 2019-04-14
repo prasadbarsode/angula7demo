@@ -1,0 +1,15 @@
+<div  [ngStyle]="{'background-color':'wheat'}">
+  <h3>State Component</h3>
+
+  <h3>
+    State Name  :<input [(ngModel)]="name"  (keyup)="sendStateToCountry()" />  <br/><br/>
+  
+    Country Name    :{{countryName}}  <br/><br/>
+   
+    City  Name    :{{cityName}}  <br/><br/>
+   
+
+</h3>
+ <app-city  [stateName]="name"  [countryName]="countryName"   (cityChanged)="sendCityToCountry($event)"  ></app-city>
+ 
+</div>

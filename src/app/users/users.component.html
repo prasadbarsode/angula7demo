@@ -1,0 +1,47 @@
+<div class="container">
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li class="active"><a [routerLink]="['list']" >Users List</a></li>
+      <li><a [routerLink]="['table']">Users Table</a></li>
+       
+    
+    </ul>
+    
+  </div>
+</nav>
+</div>
+
+<div *ngIf="user">
+  <table class="table table-hover table-striped table-responsive">
+    <tbody>
+     <tr>
+         <th>ID</th>
+         <td>{{user.id}}</td>
+     </tr>
+     <tr>     
+       <th>NAME</th>
+       <td>{{user.name}}</td>
+      </tr>
+      <tr>     
+          <th>EMAIL</th>
+          <td>{{user.email}}</td>
+        </tr>
+        <tr>     
+            <th>CITY</th>
+            <td>{{user.address.city}}</td>
+          </tr>
+          <tr>     
+                
+         <th>COMPANY</th>
+         <td>{{user.company.name}}</td>
+        </tr>
+       </tbody>
+  </table>
+</div>
+
+
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

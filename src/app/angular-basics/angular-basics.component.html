@@ -1,0 +1,98 @@
+<div>
+<h2  [ngClass]="'A B C D'" >{{title}}</h2>
+<i>Today is :{{today|date:'dd-MMM-yyyy hh:mm:ss'}}</i>
+
+<br/>
+<input type="checkbox" [(ngModel)]="show"/> Show/Hide Color List
+
+<div *ngIf="show; else invalid"  [ngClass]="['A','B','C','D']" >
+
+  <h3>My Favourate colors</h3>
+<ul>
+  <li *ngFor="let c of colors"    [ngStyle]="{'color':c}" >{{c}}</li>
+</ul>
+</div>
+
+  <div   [ngClass]="{'A':show,'B':show,'C':hide,'D':hide}">
+    <h3>  Select Day :<input type="number"   [(ngModel)]="day"  [min]="min" max="{{max}}"></h3>
+  <div [ngSwitch]="day">
+    <div *ngSwitchCase="1">MONDAY</div>
+
+    <div *ngSwitchCase="2">TUESDAY</div>
+    <div *ngSwitchCase="3">WEDENESDAY</div>
+    <div *ngSwitchCase="4">THURSDAY</div>
+    <div *ngSwitchCase="5">FRIDAY</div>
+    <div *ngSwitchCase="6">SATURDAY</div>
+    <div *ngSwitchCase="7">SUNDAY</div>
+    <div *ngSwitchDefault>Sorry I don't know What DAY it is?</div>
+  </div>
+ </div>
+
+
+ <input type="button" (click)="showHide()" value="Show/Hide Employee">
+
+ <div *ngIf="hide">
+    Employee :{{employee}}
+    <br/>
+    Employee :{{employee|json}}
+   
+<pre>
+    Employee Id          : {{employee.id}}
+    Employee Name        :{{employee.name}}
+    Employee Name        :{{employee.name|titlecase}}
+    Employee Name        :{{employee.name|lowercase}}
+    Employee Name        :{{employee.name|uppercase}}
+    
+
+
+
+    Employee Salary      :{{employee.salary}}
+    Employee Salary      :{{employee.salary|number:'8.2-4'}}
+    Employee Salary      :{{employee.salary|currency:'INR'}}
+      
+    Employee Variable    :{{employee.variable}}
+    Employee Variable    :{{employee.variable|percent}}
+    Employee DOJ         :{{employee.doj}}
+    Employee DOJ         :{{employee.doj|date}}
+
+    Employee DOJ         :{{employee.doj|date:'shortDate'}}
+    Employee DOJ         :{{employee.doj|date:'mediumDate'}}
+    Employee DOJ         :{{employee.doj|date:'longDate'}}
+    Employee DOJ         :{{employee.doj|date:'fullDate'}}
+    
+    Employee DOJ         :{{employee.doj|date:'shortTime'}}
+    Employee DOJ         :{{employee.doj|date:'mediumTime'}}
+    Employee DOJ         :{{employee.doj|date:'longTime'}}
+    Employee DOJ         :{{employee.doj|date:'fullTime'}}
+
+
+    Employee DOJ         :{{employee.doj|date:'short'}}
+    Employee DOJ         :{{employee.doj|date:'medium'}}
+    Employee DOJ         :{{employee.doj|date:'long'}}
+    Employee DOJ         :{{employee.doj|date:'full'}}
+    
+    
+    Employee PAN         :{{employee.pan}}
+    Employee PAN         :{{employee.pan|uppercase|slice:0:2}}XXXX{{employee.pan|uppercase|slice:8:10}}
+    
+    Employee MOBILE      :{{employee.mobile}}
+    Employee MOBILE      :XXXXXXX{{employee.mobile|slice:8:10}}
+</pre>
+ </div>
+ <div>
+   <ul>
+     <li *ngFor="let entry of employee|keyvalue">
+      {{entry.key}}  =>{{entry.value}}
+     </li>
+   </ul>
+
+ </div>   
+</div>
+
+  
+<ng-template  #invalid>
+    <div>
+        Don't Show Colors
+   </div>
+</ng-template>
+
